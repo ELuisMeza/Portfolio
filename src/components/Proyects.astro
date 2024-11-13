@@ -1,0 +1,15 @@
+---
+import { all_proyects } from "../data/proyects";
+import CardProyect from "./CardProyect.astro";
+---
+
+<section id="Proyectos" aria-label="Proyectos">
+  <div class="sticky top-0 z-30 w-screen py-3 backdrop-blur-xl lg:hidden">
+    <h2 class="text-lg font-bold uppercase tracking-widest text-neutral-200">
+      Proyectos
+    </h2>
+  </div>
+  <ol class="flex flex-col gap-6 mt-6">
+    {all_proyects.map((proyect) => <CardProyect {...proyect} />)}
+  </ol>
+</section>

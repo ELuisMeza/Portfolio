@@ -1,0 +1,34 @@
+---
+const { title, description, technologies, demoURL, image } = Astro.props;
+---
+
+<li
+  class="flex flex-col gap-4 bg-color-hover p-4 rounded-lg max-w-[600px] mx-auto lg:bg-transparent lg:border-2 lg:border-color-hover lg:hover:bg-color-hover duration-200"
+>
+  <div class="w-full flex flex-col gap-3">
+    <h3 class="font-bold text-neutral-200 text-lg">
+      {title}
+    </h3>
+    <p class="text-xs">
+      {description}
+    </p>
+    {
+      technologies.length && (
+        <ul class="flex flex-wrap gap-2" aria-label="Technologies used">
+          {technologies.map((technology) => (
+            <li class="flex items-center justify-center rounded-full border border-neutral-700 border-opacity-50 bg-neutral-400/10 px-3 py-1 text-xs font-medium text-neutral-300">
+              {technology}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+  <div class="flex justify-center">
+    <img
+      src={`/imgs/proyects/${image}.png`}
+      alt={title}
+      class="w-full max-w-[500px]"
+    />
+  </div>
+</li>

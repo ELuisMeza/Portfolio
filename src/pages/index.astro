@@ -1,0 +1,60 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SideBar from "../components/SideBar.astro";
+import Description from "../components/Description.astro";
+import Proyects from "../components/Proyects.astro";
+import Habilidades from "../components/Habilidades.astro";
+---
+
+<Layout title="Luis Meza">
+  <div
+    class="mx-auto min-h-screen max-w-screen-2xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0"
+  >
+    <div class="lg:flex lg:justify-between lg:gap-4">
+      <SideBar />
+      <main
+        id="content"
+        class="pt-24 w-full lg:w-1/2 lg:py-24 flex flex-col gap-10"
+      >
+        <Description />
+        <Proyects />
+        <Habilidades />
+        <section id="Work Together" aria-label="Work Together" class="mt-10">
+          <p class="bg-color-hover p-4 rounded-xl">
+            Si estás buscando un desarrollador comprometido, con un fuerte
+            enfoque en la responsabilidad y el trabajo en equipo, no dudes en
+            contactarme. Estoy listo para aportar mi pasión y habilidades a tu
+            próximo proyecto.
+          </p>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <footer class="text-center py-4 text-xs">
+    {new Date().getFullYear()} &copy; Luis Meza Corilla
+  </footer>
+</Layout>
+
+<style scoped>
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .hero {
+    background-image: url(/pattern.svg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    overflow-y: visible;
+    overflow-x: clip;
+  }
+
+  .hero {
+    animation: fadeIn 3s;
+  }
+</style>

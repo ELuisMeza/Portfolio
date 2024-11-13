@@ -1,0 +1,22 @@
+---
+import {all_skills} from '../data/skills'
+---
+
+<section id="habilidades" aria-label="Mis Habilidades">
+    <div
+      class="sticky top-0 z-30 w-screen py-3 backdrop-blur-xl md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+    >
+      <h2 class="text-lg font-bold uppercase tracking-widest text-neutral-200">
+        Habilidades
+      </h2>
+    </div>
+    <div class="w-full flex justify-center flex-wrap gap-3 mt-7 max-w-[800px] mx-auto">
+      {all_skills.map((skill) => (
+        <div class="bg-color-hover rounded-lg min-w-24 py-3 flex flex-col items-center lg:bg-transparent lg:border-2 lg:border-color-hover lg:hover:bg-color-hover duration-150">
+          <img src={`/icons/tools/${skill}.svg`} alt={skill} class="h-10">
+          <span>{skill}</span>
+        </div>
+      ))}
+    </div>
+    
+  </section>

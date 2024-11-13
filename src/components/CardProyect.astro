@@ -1,5 +1,5 @@
 ---
-const { title, description, technologies, demoURL, image } = Astro.props;
+const { title, description, technologies, demoURL, repoURL, image } = Astro.props;
 ---
 
 <li
@@ -30,5 +30,23 @@ const { title, description, technologies, demoURL, image } = Astro.props;
       alt={title}
       class="w-full max-w-[500px]"
     />
+  </div>
+  <div class="flex items-center justify-center gap-3 mt-2">
+    <a
+      class="bg-[#1D3557] w-1/2 py-2 rounded-2xl text-sm flex items-center gap-2 justify-center"
+      href={demoURL}
+      target="_blank"
+    >
+      <img src="/icons/link.svg" alt="Repositorio" class="w-5" />
+      Demo</a
+    >
+    <a
+      class="bg-[#1D3557] w-1/2 py-2 rounded-2xl text-sm flex items-center gap-2 justify-center"
+      href={repoURL}
+      target="_blank"
+    >
+      <img src="/icons/github.svg" alt="Repositorio" class="w-5" />
+      Repositorio</a
+    >
   </div>
 </li>

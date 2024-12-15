@@ -7,6 +7,7 @@ export const all_skills: string[] = [
   "HTML",
   "CSS",
   "Tailwind",
+  'Zustand',
   "Python",
   "FastAPI",
   "Git",

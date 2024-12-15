@@ -9,6 +9,15 @@ export type Type_Proyect = {
 
 export const all_proyects: Type_Proyect[] = [
   {
+    title: "GoodFood",
+    description:
+      "Web funcional donde podrás encontrar todo tipo de recetas de cocina, con ayuda de los filtros incluidos, como tipo de dieta, inclusión y exclusión de ingredientes, ademas de poder almacenar tus recetas favoritas para acceder a ellas cuando quieras. En este proyecto practique el manejo de contextos con ayuda de Zustand, ademas de usar un BaaS, SupaBase, para poder manejar a todos los usuarios y sus recetas favoritas",
+    technologies: ["Next.js", "Tailwind CSS", "Typescript", "Supabase", 'Zustand', 'Framer-Motion'],
+    demoURL: "https://good-food-1.vercel.app/",
+    repoURL: "https://github.com/luismeza1101/GoodFood.git",
+    image: 'GoodFood'
+  },
+  {
     title: "Positivus",
     description:
       "Maquetado de una página web para una agencia de marketing digital dedicada a potenciar el crecimiento y éxito de empresas en el entorno digital. En este proyecto lo realize con Astro, al ser un sitio web sin mucha interactividad, ademas practique el uso de la libreria Framer-Motion, la cual me ayudo a realizar las animaciones y componentes de una manera mas facil y legible.",
@@ -18,15 +27,6 @@ export const all_proyects: Type_Proyect[] = [
     image: 'Positivus'
   },
   {
-    title: "PULSE",
-    description:
-      "Red social basica donde puedes conectar con mas personas y conversar sobre diversos temas, podrás crear posts y comentar los posts de los demás. Este proyecto lo realize con Next.js, al tener mucha interactivad. Ademas para la base de datos use SQLite al ser un proyecto pequeño, y para el Backend use FastAPI, con una estructura API RESTfull",
-    technologies: ["Next.js", "Tailwind CSS", "Typescript", "Python", "FastAPI"],
-    demoURL: "https://pulse-front-5ccjdok4w-luismeza1101s-projects.vercel.app",
-    repoURL: "https://github.com/luismeza1101/Pulse.git",
-    image: 'Pulse'
-  },
-  {
     title: "SHOP.CO",
     description:
       "Maquetado de un e-commerce dedicado a la venta de prendas de ropa, Creado con Next.js, por la interactividad que tiene con el usuario, junto con Typescrip para no tener tantos problemas con los tipos de los datos, Ademas con el uso del localStorage para tener el carrito de compras permanente",
@@ -34,15 +34,6 @@ export const all_proyects: Type_Proyect[] = [
     demoURL: "https://shopcoo1.netlify.app/",
     repoURL: "https://github.com/luismeza1101/SHOP.CO.git",
     image: 'SHOP-CO'
-  },
-  {
-    title: "Sitio web del clima",
-    description:
-      "Este sitio web esta desarrollado para que puedas saber la temperatura actual del lugar en el que te encuentras, ademas cuenta con 4 espacios vacios adicionales donde puedes tener el clima de la ciudad que quieras",
-    technologies: ["Next.js", "Tailwind CSS", "Typescript"],
-    demoURL: "https://clima-sigma-dusky.vercel.app/",
-    repoURL: "https://github.com/luismeza1101/Clima.git",
-    image: 'clima'
   },
   {
     title: "Tienda virtual de zapatillas",

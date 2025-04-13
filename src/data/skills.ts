@@ -4,12 +4,12 @@ export const all_skills: string[] = [
   "React",
   "TypeScript",
   "JavaScript",
-  "HTML",
-  "CSS",
   "Tailwind",
   'Zustand',
   "Python",
   "FastAPI",
+  "NestJS",
+  "PostgreSQL",
   "Git",
   'Github'
 ];

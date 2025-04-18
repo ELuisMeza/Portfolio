@@ -6,7 +6,7 @@ type Type_RRSS = {
 export const social_networks: Type_RRSS[] = [
   {
     name: "github",
-    url: "https://github.com/luismeza1101",
+    url: "https://github.com/ELuisMeza",
   },
   {
     name: "linkedin",

@@ -4,10 +4,21 @@ export type Type_Proyect = {
   technologies: string[];
   demoURL: string;
   repoURL: string;
-  image: string
+  image: string;
+  imagesDetail?: string[]; // opcional: varias imágenes para el carrusel
 };
 
 export const all_proyects: Type_Proyect[] = [
+  {
+    title: "SHOP.CO",
+    description:
+      "Plataforma web para la compra y venta de productos, donde el usuario puede registrarse y comprar productos, ademas de poder ver los productos y los carritos de compras de los otros usuarios, o registrar productos para la venta. Esta integrada con la API de PayPal para el pago de los productos.",
+    technologies: ["React", "Tailwind CSS", "Typescript", "Next.js", "PostgreSQL"],
+    demoURL: "https://shopcoo1.netlify.app/",
+    repoURL: "https://github.com/ELuisMeza/shop-co-full.git",
+    image: 'shop-co/1',
+    imagesDetail: ['shop-co/1', 'shop-co/2', 'shop-co/3', 'shop-co/4', 'shop-co/5', 'shop-co/6', 'shop-co/7', 'shop-co/8', 'shop-co/9']
+  },
   {
     title: "GoodFood",
     description:
@@ -25,15 +36,6 @@ export const all_proyects: Type_Proyect[] = [
     demoURL: "https://positivus-web1.netlify.app/",
     repoURL: "https://github.com/luismeza1101/Positivus.git",
     image: 'Positivus'
-  },
-  {
-    title: "SHOP.CO",
-    description:
-      "Maquetado de un e-commerce dedicado a la venta de prendas de ropa, Creado con Next.js, por la interactividad que tiene con el usuario, junto con Typescrip para no tener tantos problemas con los tipos de los datos, Ademas con el uso del localStorage para tener el carrito de compras permanente",
-    technologies: ["Next.js", "Tailwind CSS", "Typescript", "Framer-Motion"],
-    demoURL: "https://shopcoo1.netlify.app/",
-    repoURL: "https://github.com/luismeza1101/SHOP.CO.git",
-    image: 'SHOP-CO'
   },
   {
     title: "Tienda virtual de zapatillas",

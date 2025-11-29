@@ -1,3 +1,4 @@
+import React from "react";
 import type { Container } from "@tsparticles/engine";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";

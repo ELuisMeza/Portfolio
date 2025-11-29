@@ -1,53 +1,24 @@
 ---
-const { title, description, technologies, demoURL, repoURL, image } =
-  Astro.props;
+import { ProjectCard } from "./ProjectCard";
+
+const {
+  title,
+  description,
+  technologies,
+  demoURL,
+  repoURL,
+  image,
+  imagesDetail,
+} = Astro.props;
 ---
 
-<li
-  class="flex flex-col gap-4 bg-color-hover p-4 rounded-lg max-w-[600px] mx-auto lg:bg-transparent lg:border-2 lg:border-color-hover lg:hover:bg-color-hover duration-200 z-20"
->
-  <div class="w-full flex flex-col gap-3">
-    <h3 class="font-bold text-neutral-200 text-lg">
-      {title}
-    </h3>
-    <p class="text-xs">
-      {description}
-    </p>
-    {
-      technologies.length && (
-        <ul class="flex flex-wrap gap-2" aria-label="Technologies used">
-          {technologies.map((technology) => (
-            <li class="flex items-center justify-center rounded-full border border-neutral-700 border-opacity-50 bg-neutral-400/10 px-3 py-1 text-xs font-medium text-neutral-300">
-              {technology}
-            </li>
-          ))}
-        </ul>
-      )
-    }
-  </div>
-  <div class="flex justify-center">
-    <img
-      src={`/imgs/proyects/${image}.png`}
-      alt={title}
-      class="w-full max-w-[500px]"
-    />
-  </div>
-  <div class="flex items-center justify-center gap-3 mt-2">
-    <a
-      class="bg-[#1D3557] w-1/2 py-2 rounded-2xl text-sm flex items-center gap-2 justify-center"
-      href={demoURL}
-      target="_blank"
-    >
-      <img src="/icons/link.svg" alt="Repositorio" class="w-5" />
-      Demo</a
-    >
-    <a
-      class="bg-[#1D3557] w-1/2 py-2 rounded-2xl text-sm flex items-center gap-2 justify-center"
-      href={repoURL}
-      target="_blank"
-    >
-      <img src="/icons/github.svg" alt="Repositorio" class="w-5" />
-      Repositorio</a
-    >
-  </div>
-</li>
+<ProjectCard
+  client:load
+  title={title}
+  description={description}
+  technologies={technologies}
+  demoURL={demoURL}
+  repoURL={repoURL}
+  image={image}
+  imagesDetail={imagesDetail}
+/>

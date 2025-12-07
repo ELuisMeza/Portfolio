@@ -34,13 +34,13 @@ export const CarouselImages = ({ images, alt = 'Imagen del carrusel' }: Carousel
       <div className="relative bg-neutral-900 rounded-xl p-6 shadow-2xl">
         {/* Contenedor de imágenes */}
         <div className="relative overflow-hidden rounded-lg">
-          <div className="relative aspect-video w-full">
+          <div className="relative w-full min-h-[400px] flex items-center justify-center bg-neutral-800">
             {images.map((image, index) => (
               <img
                 key={index}
                 src={image}
                 alt={`${alt} ${index + 1}`}
-                className={`absolute inset-0 w-full h-full object-cover rounded-lg transition-all duration-500 ease-in-out ${
+                className={`absolute inset-0 w-full h-full object-contain rounded-lg transition-all duration-500 ease-in-out ${
                   index === currentIndex
                     ? 'opacity-100 scale-100'
                     : 'opacity-0 scale-95 pointer-events-none'

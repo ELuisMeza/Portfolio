@@ -13,11 +13,21 @@ export const all_proyects: Type_Proyect[] = [
     title: "SHOP.CO",
     description:
       "Plataforma web para la compra y venta de productos, donde el usuario puede registrarse y comprar productos, ademas de poder ver los productos y los carritos de compras de los otros usuarios, o registrar productos para la venta. Esta integrada con la API de PayPal para el pago de los productos.",
-    technologies: ["React", "Tailwind CSS", "Typescript", "Next.js", "PostgreSQL"],
-    demoURL: "https://shopcoo1.netlify.app/",
+    technologies: ["React", "Tailwind CSS", "Typescript", "Nest.js", "PostgreSQL"],
+    demoURL: "",
     repoURL: "https://github.com/ELuisMeza/shop-co-full.git",
     image: 'shop-co/1',
     imagesDetail: ['shop-co/1', 'shop-co/2', 'shop-co/3', 'shop-co/4', 'shop-co/5', 'shop-co/6', 'shop-co/7', 'shop-co/8', 'shop-co/9']
+  },
+  {
+    title: "System Learning",
+    description:
+      "Sistema de gestion estudiantil donde se puede gestionar los estudiantes, cursos, profesores, notas, etc. Existen roles como admin quien se encarga de la gestion completa del sistema, profesor quien se encarga de la gestion de los cursos y estudiantes, y estudiante quien se encarga de la gestion de sus notas y cursos. Integrado con autentificacion de google para la autentificacion de los usuarios. Un sistema de envio de correos",
+    technologies: ["React", "Tailwind CSS", "Typescript", "Nest.js", "PostgreSQL", "Material UI"],
+    demoURL: "",
+    repoURL: "https://github.com/ELuisMeza/Learning_Full.git",
+    image: 'learning/1',
+    imagesDetail: ['learning/1', 'learning/2', 'learning/3', 'learning/4', 'learning/5', 'learning/6', 'learning/7', 'learning/8', 'learning/9', 'learning/10', 'learning/11', 'learning/12', 'learning/13', 'learning/14']
   },
   {
     title: "GoodFood",
@@ -36,14 +46,5 @@ export const all_proyects: Type_Proyect[] = [
     demoURL: "https://positivus-web1.netlify.app/",
     repoURL: "https://github.com/luismeza1101/Positivus.git",
     image: 'Positivus'
-  },
-  {
-    title: "Tienda virtual de zapatillas",
-    description:
-      "Desafio dificil recopilado del sitio web Frontend Mentor, que simula la seccion de un e-commerce de una tienda de zapatillas en linea",
-    technologies: ["Next.js", "Tailwind CSS", "Typescript"],
-    demoURL: "https://sneaker-store-bice.vercel.app/",
-    repoURL: "https://github.com/luismeza1101/SneakerStore.git",
-    image: 'sneakerShop'
-  },
+  }
 ];

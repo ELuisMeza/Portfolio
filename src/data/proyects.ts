@@ -12,7 +12,7 @@ export const all_proyects: Type_Proyect[] = [
   {
     title: "SHOP.CO",
     description:
-      "Plataforma web para la compra y venta de productos, donde el usuario puede registrarse y comprar productos, ademas de poder ver los productos y los carritos de compras de los otros usuarios, o registrar productos para la venta. Esta integrada con la API de PayPal para el pago de los productos.",
+      "Plataforma web de e-commerce que permite a los usuarios registrarse, comprar y vender productos en un entorno colaborativo. Incluye gestión de productos, carritos de compra visibles entre usuarios y procesamiento de pagos integrado mediante la API de PayPal. Arquitectura orientada a transacciones seguras y escalabilidad.",
     technologies: ["React", "Tailwind CSS", "Typescript", "Nest.js", "PostgreSQL"],
     demoURL: "",
     repoURL: "https://github.com/ELuisMeza/shop-co-full.git",
@@ -20,9 +20,19 @@ export const all_proyects: Type_Proyect[] = [
     imagesDetail: ['shop-co/1', 'shop-co/2', 'shop-co/3', 'shop-co/4', 'shop-co/5', 'shop-co/6', 'shop-co/7', 'shop-co/8', 'shop-co/9']
   },
   {
+    title: "Pulse",
+    description:
+      "Plataforma de mensajería en tiempo real inspirada en Discord, que permite a los usuarios unirse a canales, crear canales públicos y privados, y comunicarse de forma simultánea mediante chat en tiempo real. Construida con WebSockets para baja latencia y eventos en vivo, utilizando Angular en el frontend y una arquitectura backend escalable orientada a colaboración.",
+    technologies: ["Angular", "Tailwind CSS", "Nest.js", "PostgreSQL", "Socket.io"],
+    demoURL: "",
+    repoURL: "https://github.com/ELuisMeza/Pulse_Full.git",
+    image: 'pulse/1',
+    imagesDetail: ['pulse/1', 'pulse/2', 'pulse/3', 'pulse/4', 'pulse/5']
+  },
+  {
     title: "System Learning",
     description:
-      "Sistema de gestion estudiantil donde se puede gestionar los estudiantes, cursos, profesores, notas, etc. Existen roles como admin quien se encarga de la gestion completa del sistema, profesor quien se encarga de la gestion de los cursos y estudiantes, y estudiante quien se encarga de la gestion de sus notas y cursos. Integrado con autentificacion de google para la autentificacion de los usuarios. Un sistema de envio de correos",
+      "Sistema de gestión estudiantil que centraliza la administración de estudiantes, cursos, profesores y calificaciones. Implementa un modelo de roles (administrador, profesor y estudiante) con permisos diferenciados, autenticación con Google y un sistema de notificaciones por correo electrónico. Diseñado para optimizar procesos académicos y control institucional.",
     technologies: ["React", "Tailwind CSS", "Typescript", "Nest.js", "PostgreSQL", "Material UI"],
     demoURL: "",
     repoURL: "https://github.com/ELuisMeza/Learning_Full.git",
@@ -30,18 +40,9 @@ export const all_proyects: Type_Proyect[] = [
     imagesDetail: ['learning/1', 'learning/2', 'learning/3', 'learning/4', 'learning/5', 'learning/6', 'learning/7', 'learning/8', 'learning/9', 'learning/10', 'learning/11', 'learning/12', 'learning/13', 'learning/14']
   },
   {
-    title: "GoodFood",
-    description:
-      "Web funcional donde podrás encontrar todo tipo de recetas de cocina, con ayuda de los filtros incluidos, como tipo de dieta, inclusión y exclusión de ingredientes, ademas de poder almacenar tus recetas favoritas para acceder a ellas cuando quieras. En este proyecto practique el manejo de contextos con ayuda de Zustand, ademas de usar un BaaS, SupaBase, para poder manejar a todos los usuarios y sus recetas favoritas",
-    technologies: ["Next.js", "Tailwind CSS", "Typescript", "Supabase", 'Zustand', 'Framer-Motion'],
-    demoURL: "https://good-food-1.vercel.app/",
-    repoURL: "https://github.com/luismeza1101/GoodFood.git",
-    image: 'GoodFood'
-  },
-  {
     title: "Positivus",
     description:
-      "Maquetado de una página web para una agencia de marketing digital dedicada a potenciar el crecimiento y éxito de empresas en el entorno digital. En este proyecto lo realize con Astro, al ser un sitio web sin mucha interactividad, ademas practique el uso de la libreria Framer-Motion, la cual me ayudo a realizar las animaciones y componentes de una manera mas facil y legible.",
+      "Maquetado de un sitio web corporativo para una agencia de marketing digital, enfocado en performance, diseño limpio y experiencia visual. Desarrollado con Astro para maximizar velocidad de carga en un sitio de baja interactividad, incorporando animaciones y transiciones mediante Framer Motion para mejorar la narrativa visual.",
     technologies: ["Astro", "Tailwind CSS", "Typescript", "Framer-Motion"],
     demoURL: "https://positivus-web1.netlify.app/",
     repoURL: "https://github.com/luismeza1101/Positivus.git",

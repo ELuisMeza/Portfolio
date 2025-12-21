@@ -1,4 +1,4 @@
-const addCursor = (props: CProps) => {
+const addCursor = (props: any) => {
   if (props) {
     const contextCursor = document.createElement("div");
     contextCursor.setAttribute(

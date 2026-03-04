@@ -22,5 +22,18 @@ export const all_experiences: Type_Experience[] = [
     ],
     image: "Maxillaris.jpeg"
   },
+  {
+    title: "Desarrollador de Software Junior/Semi Senior",
+    companyName: "Alticsa",
+    time: "29/12/2025 - Presente",
+    description:
+      "Brinde soporte técnico e implemente nuevos requerimientos a los sistemas desarrollados por la empresa.",
+    activities: [
+    "Dar soporte a una web desarrollada en **Wordpress**.",
+    "Implementacion de nuevas funcionalidades a nivel frontend y backend en una ERP desarrollada con **React** y **NestJS**.",
+    "Implementacion de nuevas funcionalidades a nivel frontend y backend en una ERP desarrollada con **Next.js** y **FastAPI**.",
+    ],
+    image: "alticsa.png "
+  },
 ];
 

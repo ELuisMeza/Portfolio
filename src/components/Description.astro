@@ -1,21 +1,28 @@
 ---
 import "../styles/globals.css";
+import type { Locale } from "../i18n/types";
+import { getT } from "../i18n/server";
+import { renderWithStrong } from "../utils/transformStrong";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getT(locale);
 ---
 
-<section id="about" aria-label="Sobre mí">
+<section id="about" aria-label={t("about.aria")}>
   <div class="sticky top-0 z-30 w-screen py-3 backdrop-blur-xl lg:hidden">
     <h2 class="text-lg font-bold uppercase tracking-widest text-neutral-200">
-      Sobre Mí
+      {t("about.title")}
     </h2>
   </div>
   <p class="text-sm leading-relaxed lg:leading-[1.75]">
-    Soy Luis, desarrollador web apasionado por la tecnología y la crear soluciones utiles y eficaces. Me especializo en el <strong class="resalt-text">desarrollo frontend</strong>, utilizando herramientas modernas como <strong class="resalt-text">React, TypeScript, Tailwind CSS, Next.js y Astro</strong> para construir interfaces atractivas, accesibles y buen rendimiento. Ademas de conocimientos intermedios en herramientas de backend como <strong class="resalt-text">NestJS, PostgreSQL y FastAPI</strong>.
-
-    <br>
-    Actualmente, estoy finalizando la carrera de Diseño y Desarrollo de Software en el instituto CERTUS.
-    <br>
-    
-    Además, cuento con un <strong class="resalt-text">nivel intermedio de inglés</strong> y destaco por ser una persona responsable, puntual y con excelentes habilidades para el trabajo en equipo. La colaboración, la comunicación efectiva y el compromiso con la calidad son pilares que aplico en cada proyecto en el que participo.
+    <span set:html={renderWithStrong(t("about.p1"), "resalt-text")} />
+    <br />
+    <span set:html={renderWithStrong(t("about.p2"), "resalt-text")} />
+    <br />
+    <span set:html={renderWithStrong(t("about.p3"), "resalt-text")} />
   </p>
 </section>
-

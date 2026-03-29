@@ -1,18 +1,46 @@
 import React from "react";
-import { useState } from 'react';
+import { useState } from "react";
+import es from "../i18n/locales/es.json";
+
+export interface CarouselLabels {
+  empty: string;
+  prevAria: string;
+  nextAria: string;
+  goToPrefix: string;
+  prev: string;
+  next: string;
+  defaultAlt: string;
+}
+
+const defaultCarouselLabels: CarouselLabels = {
+  empty: es.carousel.empty,
+  prevAria: es.carousel.prevAria,
+  nextAria: es.carousel.nextAria,
+  goToPrefix: es.carousel.goToPrefix,
+  prev: es.carousel.prev,
+  next: es.carousel.next,
+  defaultAlt: es.carousel.defaultAlt,
+};
 
 interface CarouselImagesProps {
   images: string[];
   alt?: string;
+  labels?: CarouselLabels;
 }
 
-export const CarouselImages = ({ images, alt = 'Imagen del carrusel' }: CarouselImagesProps) => {
+export const CarouselImages = ({
+  images,
+  alt,
+  labels: labelsProp,
+}: CarouselImagesProps) => {
+  const labels = labelsProp ?? defaultCarouselLabels;
   const [currentIndex, setCurrentIndex] = useState(0);
+  const altText = alt ?? labels.defaultAlt;
 
   if (!images || images.length === 0) {
     return (
       <div className="w-full max-w-3xl mx-auto p-8 text-center text-neutral-400">
-        No hay imágenes para mostrar
+        {labels.empty}
       </div>
     );
   }
@@ -32,37 +60,35 @@ export const CarouselImages = ({ images, alt = 'Imagen del carrusel' }: Carousel
   return (
     <div className="w-full max-w-3xl mx-auto">
       <div className="relative bg-neutral-900 rounded-xl p-6 shadow-2xl">
-        {/* Contenedor de imágenes */}
         <div className="relative overflow-hidden rounded-lg">
           <div className="relative w-full min-h-[400px] flex items-center justify-center bg-neutral-800">
             {images.map((image, index) => (
               <img
                 key={index}
                 src={image}
-                alt={`${alt} ${index + 1}`}
+                alt={`${altText} ${index + 1}`}
                 className={`absolute inset-0 w-full h-full object-contain rounded-lg transition-all duration-500 ease-in-out ${
                   index === currentIndex
-                    ? 'opacity-100 scale-100'
-                    : 'opacity-0 scale-95 pointer-events-none'
+                    ? "opacity-100 scale-100"
+                    : "opacity-0 scale-95 pointer-events-none"
                 }`}
               />
             ))}
           </div>
 
-          {/* Botones de navegación - Desktop */}
           {images.length > 1 && (
             <>
               <button
                 onClick={goToPrevious}
                 className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 items-center justify-center w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 text-white text-2xl transition-all duration-200 hover:scale-110 backdrop-blur-sm"
-                aria-label="Imagen anterior"
+                aria-label={labels.prevAria}
               >
                 ‹
               </button>
               <button
                 onClick={goToNext}
                 className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 items-center justify-center w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 text-white text-2xl transition-all duration-200 hover:scale-110 backdrop-blur-sm"
-                aria-label="Siguiente imagen"
+                aria-label={labels.nextAria}
               >
                 ›
               </button>
@@ -72,7 +98,6 @@ export const CarouselImages = ({ images, alt = 'Imagen del carrusel' }: Carousel
 
         {images.length > 1 && (
           <>
-            {/* Indicadores de posición */}
             <div className="flex justify-center gap-2 mt-6">
               {images.map((_, index) => (
                 <button
@@ -80,31 +105,29 @@ export const CarouselImages = ({ images, alt = 'Imagen del carrusel' }: Carousel
                   onClick={() => goToSlide(index)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     index === currentIndex
-                      ? 'bg-blue-500 w-8'
-                      : 'bg-neutral-600 hover:bg-neutral-500 w-2'
+                      ? "bg-blue-500 w-8"
+                      : "bg-neutral-600 hover:bg-neutral-500 w-2"
                   }`}
-                  aria-label={`Ir a imagen ${index + 1}`}
+                  aria-label={`${labels.goToPrefix} ${index + 1}`}
                 />
               ))}
             </div>
 
-            {/* Controles móviles */}
             <div className="flex md:hidden justify-between gap-3 mt-4">
               <button
                 onClick={goToPrevious}
                 className="flex-1 px-4 py-2 rounded-full bg-neutral-800 hover:bg-neutral-700 text-sm text-neutral-200 transition-colors duration-200"
               >
-                ← Anterior
+                {labels.prev}
               </button>
               <button
                 onClick={goToNext}
                 className="flex-1 px-4 py-2 rounded-full bg-neutral-800 hover:bg-neutral-700 text-sm text-neutral-200 transition-colors duration-200"
               >
-                Siguiente →
+                {labels.next}
               </button>
             </div>
 
-            {/* Contador */}
             <div className="text-center text-neutral-400 text-sm mt-4">
               {currentIndex + 1} / {images.length}
             </div>

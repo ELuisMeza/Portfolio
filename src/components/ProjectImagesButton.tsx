@@ -14,9 +14,7 @@ const ProjectImagesButton: React.FC<ProjectImagesButtonProps> = ({
 
   if (!images || images.length === 0) return null;
 
-  const imagePaths = images.map(
-    (name) => `/imgs/proyects/${name}.png`,
-  );
+  const imagePaths = images.map((name) => `/imgs/proyects/${name}.png`);
 
   return (
     <>
@@ -47,5 +45,3 @@ const ProjectImagesButton: React.FC<ProjectImagesButtonProps> = ({
 };
 
 export default ProjectImagesButton;
-
-

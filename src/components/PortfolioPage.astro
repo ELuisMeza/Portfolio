@@ -1,0 +1,80 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LanguageSwitcher from "../components/LanguageSwitcher.astro";
+import SideBar from "../components/SideBar.astro";
+import Description from "../components/Description.astro";
+import Proyects from "../components/Proyects.astro";
+import Habilidades from "../components/Habilidades.astro";
+import Experience from "../components/Experience.astro";
+import type { Locale } from "../i18n/types";
+import { getT } from "../i18n/server";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getT(locale);
+---
+
+<Layout
+  title={t("meta.title")}
+  description={t("meta.description")}
+  lang={locale}
+>
+  <div
+    class="pointer-events-none fixed right-4 top-4 z-[60] md:right-8 md:top-8 lg:right-12 lg:top-12"
+  >
+    <div class="pointer-events-auto">
+      <LanguageSwitcher locale={locale} variant="corner" />
+    </div>
+  </div>
+  <div
+    class="mx-auto min-h-screen max-w-screen-2xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0"
+  >
+    <div class="lg:flex lg:justify-between lg:gap-4">
+      <SideBar locale={locale} />
+      <main
+        id="content"
+        class="pt-24 w-full lg:w-1/2 lg:py-24 flex flex-col gap-10 z-10"
+      >
+        <Description locale={locale} />
+        <Experience locale={locale} />
+        <Proyects locale={locale} />
+        <Habilidades locale={locale} />
+        <section id="work-together" aria-label={t("cta.aria")} class="mt-10">
+          <p class="bg-color-hover p-4 rounded-xl">
+            {t("cta.text")}
+          </p>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <footer class="text-center py-4 text-xs">
+    {new Date().getFullYear()} &copy; {t("meta.copyrightName")}
+  </footer>
+</Layout>
+
+<style scoped>
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .hero {
+    background-image: url(/pattern.svg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    overflow-y: visible;
+    overflow-x: clip;
+  }
+
+  .hero {
+    animation: fadeIn 3s;
+  }
+</style>

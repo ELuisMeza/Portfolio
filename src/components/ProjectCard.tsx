@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CarouselImages } from "./CarrouselIamges";
+import { CarouselImages, type CarouselLabels } from "./CarrouselIamges";
 
 function parseBoldSegments(line: string): React.ReactNode[] {
   const nodes: React.ReactNode[] = [];
@@ -14,7 +14,7 @@ function parseBoldSegments(line: string): React.ReactNode[] {
     nodes.push(
       <strong key={k++} className="font-semibold text-neutral-100">
         {m[1]}
-      </strong>
+      </strong>,
     );
     last = re.lastIndex;
   }
@@ -38,6 +38,14 @@ function FormattedDescription({ text }: { text: string }) {
   );
 }
 
+export interface ProjectCardLabels {
+  demo: string;
+  repository: string;
+  close: string;
+  closeModalAria: string;
+  technologiesAria: string;
+}
+
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -46,6 +54,8 @@ interface ProjectCardProps {
   repoURL: string;
   image: string;
   imagesDetail?: string[];
+  labels: ProjectCardLabels;
+  carouselLabels: CarouselLabels;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -56,11 +66,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   repoURL,
   image,
   imagesDetail,
+  labels,
+  carouselLabels,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleCardClick = (e: React.MouseEvent) => {
-    // No abrir el modal si se hace click en los enlaces
     const target = e.target as HTMLElement;
     if (
       target.closest("a") ||
@@ -81,9 +92,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       <li
         onClick={handleCardClick}
         className={`flex flex-col gap-4 bg-color-hover p-4 rounded-lg max-w-[600px] mx-auto lg:bg-transparent lg:border-2 lg:border-color-hover lg:hover:bg-color-hover duration-200 z-20 ${
-          imagesDetail && imagesDetail.length > 0
-            ? "cursor-pointer"
-            : ""
+          imagesDetail && imagesDetail.length > 0 ? "cursor-pointer" : ""
         }`}
       >
         <div className="w-full flex flex-col gap-3">
@@ -92,7 +101,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             <FormattedDescription text={description} />
           </p>
           {technologies.length > 0 && (
-            <ul className="flex flex-wrap gap-2" aria-label="Technologies used">
+            <ul
+              className="flex flex-wrap gap-2"
+              aria-label={labels.technologiesAria}
+            >
               {technologies.map((technology, index) => (
                 <li
                   key={index}
@@ -119,8 +131,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
           >
-            <img src="/icons/link.svg" alt="Demo" className="w-5" />
-            Demo
+            <img src="/icons/link.svg" alt="" className="w-5" />
+            {labels.demo}
           </a>
           <a
             className="bg-[#1D3557] w-1/2 py-2 rounded-2xl text-sm flex items-center gap-2 justify-center"
@@ -129,8 +141,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
           >
-            <img src="/icons/github.svg" alt="Repositorio" className="w-5" />
-            Repositorio
+            <img src="/icons/github.svg" alt="" className="w-5" />
+            {labels.repository}
           </a>
         </div>
       </li>
@@ -148,15 +160,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               type="button"
               onClick={() => setIsModalOpen(false)}
               className="absolute -top-10 right-2 rounded-full bg-neutral-900 px-3 py-1 text-sm text-neutral-200 hover:bg-neutral-800 transition-colors duration-200"
-              aria-label="Cerrar modal"
+              aria-label={labels.closeModalAria}
             >
-              Cerrar
+              {labels.close}
             </button>
-            <CarouselImages images={imagePaths} alt={title} />
+            <CarouselImages
+              images={imagePaths}
+              alt={title}
+              labels={carouselLabels}
+            />
           </div>
         </div>
       )}
     </>
   );
 };
-

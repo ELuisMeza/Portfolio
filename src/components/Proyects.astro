@@ -1,15 +1,29 @@
 ---
-import { all_proyects } from "../data/proyects";
+import { getProjects } from "../data/proyects";
 import CardProyect from "./CardProyect.astro";
+import type { Locale } from "../i18n/types";
+import { getT } from "../i18n/server";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getT(locale);
+const all_proyects = getProjects(locale);
 ---
 
-<section id="Proyectos" aria-label="Proyectos">
+<section id="Proyectos" aria-label={t("projects.aria")}>
   <div class="sticky top-0 z-30 w-screen py-3 backdrop-blur-xl lg:hidden">
     <h2 class="text-lg font-bold uppercase tracking-widest text-neutral-200">
-      Proyectos
+      {t("projects.title")}
     </h2>
   </div>
   <ol class="flex flex-col gap-6 mt-6">
-    {all_proyects.map((proyect) => <CardProyect {...proyect} />)}
+    {
+      all_proyects.map((proyect) => (
+        <CardProyect locale={locale} {...proyect} />
+      ))
+    }
   </ol>
 </section>

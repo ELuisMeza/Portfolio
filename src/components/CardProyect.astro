@@ -1,7 +1,9 @@
 ---
 import { ProjectCard } from "./ProjectCard";
+import { getT } from "../i18n/server";
 
 const {
+  locale,
   title,
   description,
   technologies,
@@ -10,6 +12,8 @@ const {
   image,
   imagesDetail,
 } = Astro.props;
+
+const t = getT(locale);
 ---
 
 <ProjectCard
@@ -21,4 +25,20 @@ const {
   repoURL={repoURL}
   image={image}
   imagesDetail={imagesDetail}
+  labels={{
+    demo: t("projectCard.demo"),
+    repository: t("projectCard.repository"),
+    close: t("projectCard.close"),
+    closeModalAria: t("projectCard.closeModalAria"),
+    technologiesAria: t("projectCard.technologiesAria"),
+  }}
+  carouselLabels={{
+    empty: t("carousel.empty"),
+    prevAria: t("carousel.prevAria"),
+    nextAria: t("carousel.nextAria"),
+    goToPrefix: t("carousel.goToPrefix"),
+    prev: t("carousel.prev"),
+    next: t("carousel.next"),
+    defaultAlt: t("carousel.defaultAlt"),
+  }}
 />

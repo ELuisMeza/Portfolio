@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "Luis Meza",
+    "description": "Luis Meza's portfolio — web developer.",
+    "copyrightName": "Luis Meza Corilla"
+  },
+  "sidebar": {
+    "role": "Web developer",
+    "cv": "Ver CV",
+    "photoAlt": "Luis Meza",
+    "socialAria": "Social media"
+  },
+  "language": {
+    "label": "Language",
+    "es": "Español",
+    "en": "English"
+  },
+  "about": {
+    "title": "About me",
+    "aria": "About me",
+    "p1": "I'm Luis, a web developer passionate about technology and building useful, effective solutions. I specialize in **frontend development**, using modern tools such as **React, TypeScript, Tailwind CSS, Next.js, and Astro** to build attractive, accessible, high-performance interfaces. I also have intermediate knowledge of backend tools like **NestJS, PostgreSQL, and FastAPI**.",
+    "p2": "I'm currently finishing my Software Design and Development degree at CERTUS institute.",
+    "p3": "I have an **intermediate level of English** and stand out as a responsible, punctual person with strong teamwork skills. Collaboration, clear communication, and commitment to quality are principles I apply in every project I take part in."
+  },
+  "experience": {
+    "title": "Experience",
+    "aria": "Experience"
+  },
+  "projects": {
+    "title": "Projects",
+    "aria": "Projects"
+  },
+  "skills": {
+    "title": "Skills",
+    "aria": "My skills"
+  },
+  "cta": {
+    "aria": "Work together",
+    "text": "If you're looking for a committed developer with a strong sense of responsibility and teamwork, feel free to reach out. I'm ready to bring my passion and skills to your next project."
+  },
+  "projectCard": {
+    "demo": "Demo",
+    "repository": "Repository",
+    "close": "Close",
+    "closeModalAria": "Close dialog",
+    "technologiesAria": "Technologies used"
+  },
+  "carousel": {
+    "empty": "No images to display",
+    "prevAria": "Previous image",
+    "nextAria": "Next image",
+    "goToPrefix": "Go to image",
+    "prev": "← Previous",
+    "next": "Next →",
+    "defaultAlt": "Carousel image"
+  }
+}

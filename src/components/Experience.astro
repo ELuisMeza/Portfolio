@@ -1,14 +1,24 @@
 ---
-import { all_experiences } from "../data/experiencies";
+import { getExperiences } from "../data/experiencies";
 import { renderWithStrong } from "../utils/transformStrong";
+import type { Locale } from "../i18n/types";
+import { getT } from "../i18n/server";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getT(locale);
+const all_experiences = getExperiences(locale);
 ---
 
-<section id="experience" aria-label="Experiencia">
+<section id="experience" aria-label={t("experience.aria")}>
   <div
     class="sticky top-0 z-30 w-screen py-3 backdrop-blur-xl md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
   >
     <h2 class="text-lg font-bold uppercase tracking-widest text-neutral-200">
-      Experiencia
+      {t("experience.title")}
     </h2>
   </div>
 

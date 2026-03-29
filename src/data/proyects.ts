@@ -45,7 +45,7 @@ const shared = {
       "PostgreSQL",
       "Socket.io",
     ],
-    demoURL: "",
+    demoURL: "https://pulse-front-seven.vercel.app/",
     repoURL: "https://github.com/ELuisMeza/Pulse_Full.git",
     image: "pulse/1",
     imagesDetail: [

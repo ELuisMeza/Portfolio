@@ -14,7 +14,7 @@ export const all_proyects: Type_Proyect[] = [
     description:
       "Plataforma web de e-commerce que permite a los usuarios registrarse, comprar y vender productos en un entorno colaborativo. Incluye gestión de productos, carritos de compra visibles entre usuarios y procesamiento de pagos integrado mediante la API de PayPal. Arquitectura orientada a transacciones seguras y escalabilidad.",
     technologies: ["React", "Tailwind CSS", "Typescript", "Nest.js", "PostgreSQL"],
-    demoURL: "",
+    demoURL: "https://shop-co-frontend-three.vercel.app/",
     repoURL: "https://github.com/ELuisMeza/shop-co-full.git",
     image: 'shop-co/1',
     imagesDetail: ['shop-co/1', 'shop-co/2', 'shop-co/3', 'shop-co/4', 'shop-co/5', 'shop-co/6', 'shop-co/7', 'shop-co/8', 'shop-co/9']

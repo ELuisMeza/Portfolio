@@ -1,6 +1,43 @@
 import React, { useState } from "react";
 import { CarouselImages } from "./CarrouselIamges";
 
+function parseBoldSegments(line: string): React.ReactNode[] {
+  const nodes: React.ReactNode[] = [];
+  const re = /\*\*(.+?)\*\*/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  let k = 0;
+  while ((m = re.exec(line)) !== null) {
+    if (m.index > last) {
+      nodes.push(line.slice(last, m.index));
+    }
+    nodes.push(
+      <strong key={k++} className="font-semibold text-neutral-100">
+        {m[1]}
+      </strong>
+    );
+    last = re.lastIndex;
+  }
+  if (last < line.length) {
+    nodes.push(line.slice(last));
+  }
+  return nodes.length > 0 ? nodes : [line];
+}
+
+function FormattedDescription({ text }: { text: string }) {
+  const lines = text.split("n/");
+  return (
+    <>
+      {lines.map((line, i) => (
+        <React.Fragment key={i}>
+          {i > 0 && <br />}
+          {parseBoldSegments(line)}
+        </React.Fragment>
+      ))}
+    </>
+  );
+}
+
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -51,7 +88,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       >
         <div className="w-full flex flex-col gap-3">
           <h3 className="font-bold text-neutral-200 text-lg">{title}</h3>
-          <p className="text-xs">{description}</p>
+          <p className="text-xs">
+            <FormattedDescription text={description} />
+          </p>
           {technologies.length > 0 && (
             <ul className="flex flex-wrap gap-2" aria-label="Technologies used">
               {technologies.map((technology, index) => (

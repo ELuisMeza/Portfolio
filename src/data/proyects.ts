@@ -12,8 +12,8 @@ export const all_proyects: Type_Proyect[] = [
   {
     title: "SHOP.CO",
     description:
-      "Plataforma web de e-commerce que permite a los usuarios registrarse, comprar y vender productos en un entorno colaborativo. Incluye gestión de productos, carritos de compra visibles entre usuarios y procesamiento de pagos integrado mediante la API de PayPal. Arquitectura orientada a transacciones seguras y escalabilidad.",
-    technologies: ["React", "Tailwind CSS", "Typescript", "Nest.js", "PostgreSQL"],
+      "Plataforma web de e-commerce que permite a los usuarios registrarse, comprar y vender productos en un entorno colaborativo. Incluye gestión de productos, carritos de compra visibles entre usuarios y procesamiento de pagos integrado mediante la API de PayPal. Arquitectura orientada a transacciones seguras y escalabilidad. n/ n/ **(DESPLEGADO EN VERCEL, USANDO CLOUDINARY PARA EL ALMACENAMIENTO DE IMAGENES Y CONFIGURADO INICIALMENTE LA API DE PAYPAL)**",
+    technologies: ["React", "Tailwind CSS", "Typescript", "Nest.js", "PostgreSQL", "PayPal API", "Cloudinary", "Vercel"],
     demoURL: "https://shop-co-frontend-three.vercel.app/",
     repoURL: "https://github.com/ELuisMeza/shop-co-full.git",
     image: 'shop-co/1',

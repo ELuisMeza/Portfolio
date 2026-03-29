@@ -65,7 +65,7 @@ const shared = {
       "PostgreSQL",
       "Material UI",
     ],
-    demoURL: "",
+    demoURL: "https://learning-front-cyan.vercel.app/",
     repoURL: "https://github.com/ELuisMeza/Learning_Full.git",
     image: "learning/1",
     imagesDetail: [

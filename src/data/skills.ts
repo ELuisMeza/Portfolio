@@ -10,5 +10,6 @@ export const all_skills: string[] = [
   "NestJS",
   "PostgreSQL",
   "Git",
-  'Github'
+  'Github',
+  "MongoDB"
 ];

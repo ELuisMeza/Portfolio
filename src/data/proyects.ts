@@ -85,12 +85,12 @@ const shared = {
       "learning/14",
     ],
   },
-  positivus: {
-    technologies: ["Astro", "Tailwind CSS", "Typescript", "Framer-Motion"],
-    demoURL: "https://positivus-web1.netlify.app/",
-    repoURL: "https://github.com/luismeza1101/Positivus.git",
-    image: "Positivus",
-  },
+  vansi: {
+    technologies: ["FastAPI", "Ollama", "MongoDB", "chromaDB", "React", "Anime.js"],
+    demoURL: "https://github.com/ELuisMeza/vansi_full.git",
+    repoURL: "https://github.com/ELuisMeza/vansi_full.git",
+    image: "vansi",
+  }
 };
 
 const byLocale: Record<Locale, Type_Proyect[]> = {
@@ -114,10 +114,10 @@ const byLocale: Record<Locale, Type_Proyect[]> = {
       ...shared.learning,
     },
     {
-      title: "Positivus",
+      title: "Vansi",
       description:
-        "Maquetado de un sitio web corporativo para una agencia de marketing digital, enfocado en performance, diseño limpio y experiencia visual. Desarrollado con Astro para maximizar velocidad de carga en un sitio de baja interactividad, incorporando animaciones y transiciones mediante Framer Motion para mejorar la narrativa visual.",
-      ...shared.positivus,
+        "Plataforma web para aprender y practicar inglés mediante un agente conversacional con soporte de texto y voz. Los usuarios pueden mantener sesiones de chat guardadas en base de datos, con un tutor que adapta el lenguaje al nivel CEFR del alumno. Incorpora RAG: embeddings de la consulta, búsqueda vectorial en Chroma sobre material de referencia CEFR y inyección de contexto en las instrucciones del modelo para fundamentar reglas y ejemplos sin mezclar niveles. La voz cubre transcripción (Whisper / faster-whisper) y síntesis (Edge TTS). Arquitectura API REST con FastAPI, persistencia en MongoDB y autenticación JWT, orientada a separar cliente (React + Vite) y servicios de IA ejecutados vía Ollama (LLM y modelo de embeddings).",
+         ...shared.vansi,
     },
   ],
   en: [
@@ -140,10 +140,10 @@ const byLocale: Record<Locale, Type_Proyect[]> = {
       ...shared.learning,
     },
     {
-      title: "Positivus",
+      title: "Vansi",
       description:
-        "Corporate marketing agency website layout focused on performance, clean design, and visual polish. Built with Astro for fast loads on a low-interactivity site, with Framer Motion for animations and transitions that support the visual story.",
-      ...shared.positivus,
+        "A web platform for learning and practicing English using a conversational agent with text and voice support. Users can maintain chat sessions saved in a database, with a tutor who adapts the language to the student's CEFR level. It incorporates RAG: query embeddings, vector search in Chroma on CEFR reference material, and context injection into model instructions to substantiate rules and examples without mixing levels. Voice support includes transcription (Whisper/Faster-Whisper) and synthesis (Edge TTS). The REST API architecture uses FastAPI, MongoDB persistence, and JWT authentication, and is designed to separate the client (React + Vite) from AI services executed via Ollama (LLM and embedding model).",
+        ...shared.vansi,
     },
   ],
 };

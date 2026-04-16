@@ -18,9 +18,9 @@
   "about": {
     "title": "About me",
     "aria": "About me",
-    "p1": "I'm Luis, Full-stack developer with experience in end-to-end web application development. On the frontend, I work with modern technologies to create clear, functional, and high-performing interfaces, always prioritizing the user experience.",
+    "p1": "I'm Luis, **Full-stack developer** with experience in end-to-end web application development. On the frontend, I work with modern technologies to create clear, functional, and high-performing interfaces, always prioritizing the user experience.",
     "p2": "On the backend, I develop and maintain business logic, working with relational databases and complex multi-table structures, ensuring system consistency, efficiency, and scalability. ",
-    "p3": "I have an intermediate level of English and am characterized by responsibility, punctuality, and a results-oriented approach. I value teamwork, effective communication, and a commitment to quality in every project I undertake."
+    "p3": "I have an **intermediate level of English** and am characterized by responsibility, punctuality, and a results-oriented approach. I value teamwork, effective communication, and a commitment to quality in every project I undertake."
   },
   "experience": {
     "title": "Experience",

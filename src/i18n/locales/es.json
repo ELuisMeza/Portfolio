@@ -18,9 +18,9 @@
   "about": {
     "title": "Sobre mí",
     "aria": "Sobre mí",
-    "p1": "Soy Luis, Desarrollador Fullstack con experiencia en el desarrollo de aplicaciones web de principio a fin. En el frontend trabajo con tecnologías modernas para crear interfaces claras, funcionales y con buen rendimiento, priorizando siempre la experiencia del usuario.",
+    "p1": "Soy Luis, **Desarrollador Fullstack** con experiencia en el desarrollo de aplicaciones web de principio a fin. En el frontend trabajo con tecnologías modernas para crear interfaces claras, funcionales y con buen rendimiento, priorizando siempre la experiencia del usuario.",
     "p2": "En el backend desarrollo y mantengo la lógica de negocio, trabajando con bases de datos relacionales y estructuras complejas de múltiples tablas, asegurando consistencia, eficiencia y escalabilidad en los sistemas.",
-    "p3": "Cuento con nivel intermedio de inglés y me caracterizo por la responsabilidad, puntualidad y orientación a resultados. Valoro el trabajo en equipo, la comunicación efectiva y el compromiso con la calidad en cada proyecto en el que participo."
+    "p3": "Cuento con nivel **intermedio de inglés** y me caracterizo por la responsabilidad, puntualidad y orientación a resultados. Valoro el trabajo en equipo, la comunicación efectiva y el compromiso con la calidad en cada proyecto en el que participo."
   },
   "experience": {
     "title": "Experiencia",
